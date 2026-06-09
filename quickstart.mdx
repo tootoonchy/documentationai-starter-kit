@@ -1,0 +1,77 @@
+---
+title: Quickstart Guide
+description: Get started with Humanic in minutes by creating your account and producing your first podcast segment.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+Before you begin, ensure you have a modern web browser and a valid email address. Sign up is free and takes under two minutes.
+</Callout>
+
+## Create Your Account and Workspace
+
+<Steps>
+<Step title="Sign up for Humanic" icon="user-plus">
+Visit the Humanic homepage and click "Sign up free". Enter your email and create a secure password. You will receive a verification link.
+</Step>
+<Step title="Set up your workspace" icon="folder-plus">
+After verification, name your workspace (for example, `MyPodcastCo`). This becomes your central hub for all episodes and collaborators.
+</Step>
+<Step title="Connect your profile" icon="user">
+Add a short bio and upload an avatar. This information appears in episode credits and the Ask Humanic directory.
+</Step>
+</Steps>
+
+## Navigate the Humanic Studio Interface
+
+Humanic Studio is organized into five main sections: Ask Humanic, Voices, Episodes, Segments, and Studio. Use the left sidebar to switch between them quickly.
+
+<Tabs>
+<Tab title="Web" icon="monitor">
+The web interface shows a dashboard with recent episodes on the right and quick actions on the left.
+</Tab>
+<Tab title="Mobile" icon="smartphone">
+The mobile app mirrors the same layout with touch-friendly controls for recording on the go.
+</Tab>
+</Tabs>
+
+## Record or Generate Your First Episode
+
+You can either record live audio or generate segments using AI voices.
+
+<CodeGroup tabs="cURL,JavaScript">
+```bash
+curl -X POST https://api.humanic.fm/episodes \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"title":"First Episode","segments":3}'
+```
+```javascript
+const response = await fetch('https://api.humanic.fm/episodes', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'First Episode', segments: 3 })
+});
+```
+</CodeGroup>
+
+## Invite Collaborators and Guests
+
+Share your workspace link or send targeted invites through the Episodes tab.
+
+<Columns cols={2}>
+<Card title="Invite team members" icon="users" href="#invite-team">
+Add editors and producers with role-based permissions.
+</Card>
+<Card title="Invite guests" icon="mic" href="#invite-guests">
+Send calendar invites directly from the Segments view.
+</Card>
+</Columns>
+
+## Next Steps
+
+Explore the Voices library to select authentic speakers or dive into Ask Humanic to research episode topics grounded in real conversations.

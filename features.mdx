@@ -1,0 +1,106 @@
+---
+title: Core Features
+description: Deep dive into Humanic's main capabilities including AI-assisted content creation and expert directory search.
+---
+
+## Overview
+
+Humanic empowers you to create authentic podcast episodes with AI assistance grounded in real conversations. You interact with the platform through key areas: Ask Humanic for expert queries, voice and episode management, and Humanic Studio for full production workflows.
+
+<Callout kind="info">
+  All features require a free account. Sign up at humanic.fm to access chat history and saved segments.
+</Callout>
+
+## Key Capabilities
+
+Explore the primary tools that power your podcast co-creation process.
+
+<Columns cols={2}>
+  <Card title="Ask Humanic" icon="search" href="#ask-humanic">
+    Query real founder and expert conversations for grounded answers.
+  </Card>
+  <Card title="Content Management" icon="database" href="#content-management">
+    Organize voices, episodes, and segments in one workspace.
+  </Card>
+  <Card title="AI Production" icon="zap" href="#ai-production">
+    Generate authentic segments with AI guidance.
+  </Card>
+  <Card title="Humanic Studio" icon="mic" href="#humanic-studio">
+    Produce complete episodes from start to finish.
+  </Card>
+</Columns>
+
+## Ask Humanic
+
+You use Ask Humanic to search a directory of authentic conversations. The tool returns answers from founders, investors, and operators instead of generic AI output.
+
+<Tabs>
+  <Tab title="Web Interface" icon="globe">
+    Enter your question directly in the search bar. Results include source timestamps and speaker context.
+  </Tab>
+  <Tab title="API Access" icon="code">
+    Integrate queries programmatically for custom applications.
+  </Tab>
+</Tabs>
+
+````javascript
+const response = await fetch('https://api.humanic.fm/ask', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    query: "How did you validate your first startup idea?",
+    limit: 5
+  })
+});
+const data = await response.json();
+console.log(data.results);
+````
+
+## Content Management
+
+You manage Voices, Episodes, and Segments through a unified dashboard. Voices represent expert profiles, Episodes track full shows, and Segments capture reusable clips.
+
+<Steps>
+  <Step title="Create a Voice" icon="user">
+    Add a new expert profile with bio and conversation history.
+  </Step>
+  <Step title="Build Episodes" icon="play">
+    Assemble segments into complete episodes with AI suggestions.
+  </Step>
+  <Step title="Export Segments" icon="download">
+    Download clips for editing in external tools.
+  </Step>
+</Steps>
+
+## AI Production Workflow
+
+Humanic assists you in producing pro-quality content by suggesting transitions and questions based on existing conversations.
+
+<Expandable title="Advanced segment generation" default-open="false">
+  Enable AI to propose segment structures. You review and approve each suggestion before finalizing.
+</Expandable>
+
+## Humanic Studio
+
+You leverage Humanic Studio for end-to-end episode production. The studio combines voice synthesis, segment editing, and export tools.
+
+```bash
+# Example CLI command to render an episode
+humanic studio render --episode-id ep_12345 --format mp3
+```
+
+## Next Steps
+
+After exploring these features, you can apply to join as a guest expert or request a demo for team workflows.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="book-open" href="/quickstart" horizontal>
+    Set up your first project in minutes.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference" horizontal>
+    Explore full endpoint documentation.
+  </Card>
+</Columns>
